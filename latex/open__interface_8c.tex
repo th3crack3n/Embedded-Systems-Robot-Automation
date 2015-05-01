@@ -1,0 +1,367 @@
+\hypertarget{open__interface_8c}{
+\section{open\_\-interface.c File Reference}
+\label{open__interface_8c}\index{open\_\-interface.c@{open\_\-interface.c}}
+}
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}open\_\-interface.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structoi__t}{oi\_\-t} $\ast$ \hyperlink{open__interface_8c_a65828c44483a592b76e066ec40034cc5}{oi\_\-alloc} (void)
+\begin{DoxyCompactList}\small\item\em Allocated a new oi. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_abe8995b948a2f47938a574b59c2dda7e}{oi\_\-free} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Destroy a oi. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a9108ba8c791d0e97444c03b2f40b278a}{oi\_\-init} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Initialize the Create. This must be called first. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a9129559bba5ff9dc7e4df64330864674}{oi\_\-update} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\begin{DoxyCompactList}\small\item\em Update the Create. This will update all the sensor data. This function should be called once every cycle. \end{DoxyCompactList}\item 
+uint8\_\-t \hyperlink{open__interface_8c_a3380c00c0e7693d21281ee7edb0317d3}{oi\_\-is\_\-on} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Create is On or Off. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a2b6f7c9f7fc2e1a14d837bc574f07ee7}{oi\_\-power\_\-on} ()
+\begin{DoxyCompactList}\small\item\em Power on the Create. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_aac083567ec1f0658bac6228130a5dc60}{oi\_\-power\_\-off} ()
+\begin{DoxyCompactList}\small\item\em Power off the Create. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a53fa762ab03f4b109f3f687180f62ba6}{oi\_\-set\_\-leds} (uint8\_\-t play\_\-led, uint8\_\-t advance\_\-led, uint8\_\-t power\_\-color, uint8\_\-t power\_\-intensity)
+\begin{DoxyCompactList}\small\item\em Set the LEDS on the Create. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a2ba1872d6c6b7893a4f1824f59d551fe}{oi\_\-set\_\-speed} (int16\_\-t linear\_\-speed, int16\_\-t angular\_\-speed)
+\begin{DoxyCompactList}\small\item\em Set the speed of the robot. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a2dfa9fddb3b143e74605cc2f1ba7544c}{oi\_\-set\_\-wheels} (int16\_\-t right\_\-wheel, int16\_\-t left\_\-wheel)
+\begin{DoxyCompactList}\small\item\em Set direction and speed of the robot's wheels. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a6b24472922339cf9a317d9cdffba9ec8}{oi\_\-load\_\-song} (unsigned char song\_\-index, unsigned char num\_\-notes, unsigned char $\ast$notes, unsigned char $\ast$duration)
+\begin{DoxyCompactList}\small\item\em Load song sequence. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a7615ea15044f2cf1d25c8516f959a272}{oi\_\-play\_\-song} (unsigned char index)
+\begin{DoxyCompactList}\small\item\em Play song. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_a6c701c5d6642b0f7128b03542a09ed76}{go\_\-charge} (void)
+\item 
+void \hyperlink{open__interface_8c_afb384efe98529a12f6293af066381cd5}{oi\_\-byte\_\-tx} (unsigned char value)
+\begin{DoxyCompactList}\small\item\em Transmit a byte of data over the serial connection to the Create. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{open__interface_8c_a3147d041ba8ea3524f0fbefbfa487e38}{oi\_\-byte\_\-rx} (void)
+\begin{DoxyCompactList}\small\item\em Receive a byte of data from the Create serial connection. Blocks until a byte is received. \end{DoxyCompactList}\item 
+void \hyperlink{open__interface_8c_acfd10b414fea680b11f01b5950a0986a}{oi\_\-clear\_\-distance} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\item 
+void \hyperlink{open__interface_8c_affb9f47f90869dff27a1f7a605cb4ec3}{oi\_\-clear\_\-angle} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\item 
+int \hyperlink{open__interface_8c_ad6be7df6ff4b084cd003ed8302f1dfd6}{oi\_\-current\_\-distance} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\item 
+int \hyperlink{open__interface_8c_a067ee9ad3b2bb71e425c02ef59e82662}{oi\_\-current\_\-angle} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\item 
+char \hyperlink{open__interface_8c_a5c8b4fdefdab58b2b87a5f1a2eff4297}{oi\_\-bump\_\-status} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile uint16\_\-t \hyperlink{open__interface_8c_a11bd4b9183705ca8fa0d792c04129c13}{led0\_\-state} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{open__interface_8c_a6c701c5d6642b0f7128b03542a09ed76}{
+\index{open\_\-interface.c@{open\_\-interface.c}!go\_\-charge@{go\_\-charge}}
+\index{go\_\-charge@{go\_\-charge}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{go\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}void go\_\-charge (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a6c701c5d6642b0f7128b03542a09ed76}
+\hypertarget{open__interface_8c_a65828c44483a592b76e066ec40034cc5}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-alloc@{oi\_\-alloc}}
+\index{oi\_\-alloc@{oi\_\-alloc}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf oi\_\-t}$\ast$ oi\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a65828c44483a592b76e066ec40034cc5}
+
+
+Allocated a new oi. 
+
+\hypertarget{open__interface_8c_a5c8b4fdefdab58b2b87a5f1a2eff4297}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-bump\_\-status@{oi\_\-bump\_\-status}}
+\index{oi\_\-bump\_\-status@{oi\_\-bump\_\-status}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-bump\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}char oi\_\-bump\_\-status (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a5c8b4fdefdab58b2b87a5f1a2eff4297}
+\hypertarget{open__interface_8c_a3147d041ba8ea3524f0fbefbfa487e38}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-byte\_\-rx@{oi\_\-byte\_\-rx}}
+\index{oi\_\-byte\_\-rx@{oi\_\-byte\_\-rx}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-byte\_\-rx}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char oi\_\-byte\_\-rx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a3147d041ba8ea3524f0fbefbfa487e38}
+
+
+Receive a byte of data from the Create serial connection. Blocks until a byte is received. 
+
+\begin{DoxyReturn}{Returns}
+8-\/bit value returned from the Create 
+\end{DoxyReturn}
+\hypertarget{open__interface_8c_afb384efe98529a12f6293af066381cd5}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-byte\_\-tx@{oi\_\-byte\_\-tx}}
+\index{oi\_\-byte\_\-tx@{oi\_\-byte\_\-tx}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-byte\_\-tx}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-byte\_\-tx (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_afb384efe98529a12f6293af066381cd5}
+
+
+Transmit a byte of data over the serial connection to the Create. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & 8-\/bit value to transmit to the Create \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_affb9f47f90869dff27a1f7a605cb4ec3}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-clear\_\-angle@{oi\_\-clear\_\-angle}}
+\index{oi\_\-clear\_\-angle@{oi\_\-clear\_\-angle}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-clear\_\-angle}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-clear\_\-angle (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_affb9f47f90869dff27a1f7a605cb4ec3}
+\hypertarget{open__interface_8c_acfd10b414fea680b11f01b5950a0986a}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-clear\_\-distance@{oi\_\-clear\_\-distance}}
+\index{oi\_\-clear\_\-distance@{oi\_\-clear\_\-distance}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-clear\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-clear\_\-distance (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_acfd10b414fea680b11f01b5950a0986a}
+\hypertarget{open__interface_8c_a067ee9ad3b2bb71e425c02ef59e82662}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-current\_\-angle@{oi\_\-current\_\-angle}}
+\index{oi\_\-current\_\-angle@{oi\_\-current\_\-angle}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-current\_\-angle}]{\setlength{\rightskip}{0pt plus 5cm}int oi\_\-current\_\-angle (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a067ee9ad3b2bb71e425c02ef59e82662}
+\hypertarget{open__interface_8c_ad6be7df6ff4b084cd003ed8302f1dfd6}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-current\_\-distance@{oi\_\-current\_\-distance}}
+\index{oi\_\-current\_\-distance@{oi\_\-current\_\-distance}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-current\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}int oi\_\-current\_\-distance (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_ad6be7df6ff4b084cd003ed8302f1dfd6}
+\hypertarget{open__interface_8c_abe8995b948a2f47938a574b59c2dda7e}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-free@{oi\_\-free}}
+\index{oi\_\-free@{oi\_\-free}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-free}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_abe8995b948a2f47938a574b59c2dda7e}
+
+
+Destroy a oi. 
+
+\hypertarget{open__interface_8c_a9108ba8c791d0e97444c03b2f40b278a}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-init@{oi\_\-init}}
+\index{oi\_\-init@{oi\_\-init}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a9108ba8c791d0e97444c03b2f40b278a}
+
+
+Initialize the Create. This must be called first. 
+
+\hypertarget{open__interface_8c_a3380c00c0e7693d21281ee7edb0317d3}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-is\_\-on@{oi\_\-is\_\-on}}
+\index{oi\_\-is\_\-on@{oi\_\-is\_\-on}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-is\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t oi\_\-is\_\-on (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a3380c00c0e7693d21281ee7edb0317d3}
+
+
+Checks if the Create is On or Off. 
+
+\begin{DoxyReturn}{Returns}
+0=off, 1=on 
+\end{DoxyReturn}
+\hypertarget{open__interface_8c_a6b24472922339cf9a317d9cdffba9ec8}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-load\_\-song@{oi\_\-load\_\-song}}
+\index{oi\_\-load\_\-song@{oi\_\-load\_\-song}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-load\_\-song}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-load\_\-song (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{song\_\-index, }
+\item[{unsigned char}]{num\_\-notes, }
+\item[{unsigned char $\ast$}]{notes, }
+\item[{unsigned char $\ast$}]{duration}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a6b24472922339cf9a317d9cdffba9ec8}
+
+
+Load song sequence. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em An} & integer value from 0 -\/ 15 that acts as a label for note sequence \\
+\hline
+{\em An} & integer value from 1 -\/ 16 indicating the number of notes in the sequence \\
+\hline
+{\em A} & pointer to a sequence of notes stored as integer values \\
+\hline
+{\em A} & pointer to a sequence of durations that correspond to the notes \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_a7615ea15044f2cf1d25c8516f959a272}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-play\_\-song@{oi\_\-play\_\-song}}
+\index{oi\_\-play\_\-song@{oi\_\-play\_\-song}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-play\_\-song}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-play\_\-song (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{index}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a7615ea15044f2cf1d25c8516f959a272}
+
+
+Play song. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em An} & integer value from 0 -\/ 15 that is a previously establish song index \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_aac083567ec1f0658bac6228130a5dc60}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-power\_\-off@{oi\_\-power\_\-off}}
+\index{oi\_\-power\_\-off@{oi\_\-power\_\-off}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-power\_\-off}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-power\_\-off (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_aac083567ec1f0658bac6228130a5dc60}
+
+
+Power off the Create. 
+
+\hypertarget{open__interface_8c_a2b6f7c9f7fc2e1a14d837bc574f07ee7}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-power\_\-on@{oi\_\-power\_\-on}}
+\index{oi\_\-power\_\-on@{oi\_\-power\_\-on}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-power\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-power\_\-on (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a2b6f7c9f7fc2e1a14d837bc574f07ee7}
+
+
+Power on the Create. 
+
+\hypertarget{open__interface_8c_a53fa762ab03f4b109f3f687180f62ba6}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-set\_\-leds@{oi\_\-set\_\-leds}}
+\index{oi\_\-set\_\-leds@{oi\_\-set\_\-leds}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-set\_\-leds}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-set\_\-leds (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{play\_\-led, }
+\item[{uint8\_\-t}]{advance\_\-led, }
+\item[{uint8\_\-t}]{power\_\-color, }
+\item[{uint8\_\-t}]{power\_\-intensity}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a53fa762ab03f4b109f3f687180f62ba6}
+
+
+Set the LEDS on the Create. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em play\_\-led} & 0=off, 1=on \\
+\hline
+{\em advance\_\-led} & 0=off, 1=on \\
+\hline
+{\em power\_\-color} & (0-\/255), 0=green, 255=red \\
+\hline
+{\em power\_\-intensity} & (0-\/255) 0=off, 255=full intensity \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_a2ba1872d6c6b7893a4f1824f59d551fe}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-set\_\-speed@{oi\_\-set\_\-speed}}
+\index{oi\_\-set\_\-speed@{oi\_\-set\_\-speed}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-set\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-set\_\-speed (
+\begin{DoxyParamCaption}
+\item[{int16\_\-t}]{linear\_\-speed, }
+\item[{int16\_\-t}]{angular\_\-speed}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a2ba1872d6c6b7893a4f1824f59d551fe}
+
+
+Set the speed of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear\_\-speed} & Linear speed in mm/s. \\
+\hline
+{\em angular\_\-speed} & Angular speed in milli-\/radians/s. \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_a2dfa9fddb3b143e74605cc2f1ba7544c}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-set\_\-wheels@{oi\_\-set\_\-wheels}}
+\index{oi\_\-set\_\-wheels@{oi\_\-set\_\-wheels}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-set\_\-wheels}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-set\_\-wheels (
+\begin{DoxyParamCaption}
+\item[{int16\_\-t}]{right\_\-wheel, }
+\item[{int16\_\-t}]{left\_\-wheel}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a2dfa9fddb3b143e74605cc2f1ba7544c}
+
+
+Set direction and speed of the robot's wheels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linear} & velocity in mm/s values range from -\/500 -\/$>$ 500 of right wheel \\
+\hline
+{\em linear} & velocity in mm/s values range from -\/500 -\/$>$ 500 of left wheel \\
+\hline
+\end{DoxyParams}
+\hypertarget{open__interface_8c_a9129559bba5ff9dc7e4df64330864674}{
+\index{open\_\-interface.c@{open\_\-interface.c}!oi\_\-update@{oi\_\-update}}
+\index{oi\_\-update@{oi\_\-update}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{oi\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void oi\_\-update (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{open__interface_8c_a9129559bba5ff9dc7e4df64330864674}
+
+
+Update the Create. This will update all the sensor data. This function should be called once every cycle. 
+
+
+
+Charge state: 0=not charging, 1=reconditioning charging, 2=full charging, 3=trickle charging, 4=waiting, 5=charging fault condition 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{open__interface_8c_a11bd4b9183705ca8fa0d792c04129c13}{
+\index{open\_\-interface.c@{open\_\-interface.c}!led0\_\-state@{led0\_\-state}}
+\index{led0\_\-state@{led0\_\-state}!open_interface.c@{open\_\-interface.c}}
+\subsubsection[{led0\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint16\_\-t {\bf led0\_\-state} = 0}}
+\label{open__interface_8c_a11bd4b9183705ca8fa0d792c04129c13}

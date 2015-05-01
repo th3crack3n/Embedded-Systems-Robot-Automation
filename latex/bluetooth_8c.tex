@@ -1,0 +1,190 @@
+\hypertarget{bluetooth_8c}{
+\section{bluetooth.c File Reference}
+\label{bluetooth_8c}\index{bluetooth.c@{bluetooth.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include \char`\"{}lcd.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}util.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}bluetooth.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bluetooth_8c_a084f0a9cf05b1877bd8a71a90dae7ff8}{ISR} (USART0\_\-RX\_\-vect)
+\begin{DoxyCompactList}\small\item\em ISR for receive complete. \end{DoxyCompactList}\item 
+void \hyperlink{bluetooth_8c_a2924340617d21ea893df10b34804dc92}{serial\_\-putc} ()
+\begin{DoxyCompactList}\small\item\em sends characters to the data buffer if it is clear and sends \par
+ when  is pressed \end{DoxyCompactList}\item 
+void \hyperlink{bluetooth_8c_a5228cb232c3c5d117da4760b5b987ef7}{clear\_\-string} ()
+\begin{DoxyCompactList}\small\item\em Clears the string array. \end{DoxyCompactList}\item 
+int \hyperlink{bluetooth_8c_a2b50aa77ff0e77de56396c2984e582d1}{is\_\-new} ()
+\begin{DoxyCompactList}\small\item\em Returns 1 if there is a new char array ready. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{bluetooth_8c_ad3f7ab8ada3f5ffbc62519476a87279f}{get\_\-char\_\-array} ()
+\begin{DoxyCompactList}\small\item\em Returns the new char array. \end{DoxyCompactList}\item 
+void \hyperlink{bluetooth_8c_aac40fefee65a7796ef58172adb0fc3c1}{send\_\-string} (char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sends a string of characters to Putty's screen via bluetooth. \end{DoxyCompactList}\item 
+void \hyperlink{bluetooth_8c_aa3aa761351976a4256efd54fc380dcba}{USART\_\-Init} (unsigned long baud)
+\begin{DoxyCompactList}\small\item\em Initializes USART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile char \hyperlink{bluetooth_8c_a281e066a3c14e9c9e021773fedc1dbf7}{received}
+\item 
+volatile int \hyperlink{bluetooth_8c_a547b57d0e0b3b31293a55dc0eff0d4d7}{new} = 0
+\item 
+volatile char \hyperlink{bluetooth_8c_a81bd3c673ec90a8633ce07e8cb1a5d87}{input\_\-arr} \mbox{[}10\mbox{]}
+\item 
+volatile int \hyperlink{bluetooth_8c_aa54b4601b8f321053e3afab8e424f8f1}{pos} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{bluetooth_8c_a5228cb232c3c5d117da4760b5b987ef7}{
+\index{bluetooth.c@{bluetooth.c}!clear\_\-string@{clear\_\-string}}
+\index{clear\_\-string@{clear\_\-string}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{clear\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void clear\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_a5228cb232c3c5d117da4760b5b987ef7}
+
+
+Clears the string array. 
+
+\hypertarget{bluetooth_8c_ad3f7ab8ada3f5ffbc62519476a87279f}{
+\index{bluetooth.c@{bluetooth.c}!get\_\-char\_\-array@{get\_\-char\_\-array}}
+\index{get\_\-char\_\-array@{get\_\-char\_\-array}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{get\_\-char\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\_\-char\_\-array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_ad3f7ab8ada3f5ffbc62519476a87279f}
+
+
+Returns the new char array. 
+
+\begin{DoxyReturn}{Returns}
+input\_\-arr 
+\end{DoxyReturn}
+\hypertarget{bluetooth_8c_a2b50aa77ff0e77de56396c2984e582d1}{
+\index{bluetooth.c@{bluetooth.c}!is\_\-new@{is\_\-new}}
+\index{is\_\-new@{is\_\-new}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{is\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}int is\_\-new (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_a2b50aa77ff0e77de56396c2984e582d1}
+
+
+Returns 1 if there is a new char array ready. 
+
+\begin{DoxyReturn}{Returns}
+new 
+\end{DoxyReturn}
+\hypertarget{bluetooth_8c_a084f0a9cf05b1877bd8a71a90dae7ff8}{
+\index{bluetooth.c@{bluetooth.c}!ISR@{ISR}}
+\index{ISR@{ISR}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{USART0\_\-RX\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_a084f0a9cf05b1877bd8a71a90dae7ff8}
+
+
+ISR for receive complete. 
+
+\hypertarget{bluetooth_8c_aac40fefee65a7796ef58172adb0fc3c1}{
+\index{bluetooth.c@{bluetooth.c}!send\_\-string@{send\_\-string}}
+\index{send\_\-string@{send\_\-string}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{send\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void send\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_aac40fefee65a7796ef58172adb0fc3c1}
+
+
+Sends a string of characters to Putty's screen via bluetooth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & (String of charicters to be sent) \\
+\hline
+\end{DoxyParams}
+\hypertarget{bluetooth_8c_a2924340617d21ea893df10b34804dc92}{
+\index{bluetooth.c@{bluetooth.c}!serial\_\-putc@{serial\_\-putc}}
+\index{serial\_\-putc@{serial\_\-putc}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{serial\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void serial\_\-putc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_a2924340617d21ea893df10b34804dc92}
+
+
+sends characters to the data buffer if it is clear and sends \par
+ when  is pressed 
+
+
+
+Wait for empty transmit buffer by checking the UDRE bit
+
+Put data into transmit buffer; sends the data 
+
+\hypertarget{bluetooth_8c_aa3aa761351976a4256efd54fc380dcba}{
+\index{bluetooth.c@{bluetooth.c}!USART\_\-Init@{USART\_\-Init}}
+\index{USART\_\-Init@{USART\_\-Init}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{USART\_\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void USART\_\-Init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{baud}
+\end{DoxyParamCaption}
+)}}
+\label{bluetooth_8c_aa3aa761351976a4256efd54fc380dcba}
+
+
+Initializes USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baud} & (baud rate of the serial conection) \\
+\hline
+\end{DoxyParams}
+
+
+baud = (F\_\-CPU / 16 / baud) ? 1; // if not using double speed mode Set baud rate
+
+Enable double speed mode
+
+Set frame format: 8 data bits, 2 stop bits
+
+Enable receiver and transmitter 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{bluetooth_8c_a81bd3c673ec90a8633ce07e8cb1a5d87}{
+\index{bluetooth.c@{bluetooth.c}!input\_\-arr@{input\_\-arr}}
+\index{input\_\-arr@{input\_\-arr}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{input\_\-arr}]{\setlength{\rightskip}{0pt plus 5cm}volatile char {\bf input\_\-arr}\mbox{[}10\mbox{]}}}
+\label{bluetooth_8c_a81bd3c673ec90a8633ce07e8cb1a5d87}
+\hypertarget{bluetooth_8c_a547b57d0e0b3b31293a55dc0eff0d4d7}{
+\index{bluetooth.c@{bluetooth.c}!new@{new}}
+\index{new@{new}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{new}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf new} = 0}}
+\label{bluetooth_8c_a547b57d0e0b3b31293a55dc0eff0d4d7}
+\hypertarget{bluetooth_8c_aa54b4601b8f321053e3afab8e424f8f1}{
+\index{bluetooth.c@{bluetooth.c}!pos@{pos}}
+\index{pos@{pos}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf pos} = 0}}
+\label{bluetooth_8c_aa54b4601b8f321053e3afab8e424f8f1}
+\hypertarget{bluetooth_8c_a281e066a3c14e9c9e021773fedc1dbf7}{
+\index{bluetooth.c@{bluetooth.c}!received@{received}}
+\index{received@{received}!bluetooth.c@{bluetooth.c}}
+\subsubsection[{received}]{\setlength{\rightskip}{0pt plus 5cm}volatile char {\bf received}}}
+\label{bluetooth_8c_a281e066a3c14e9c9e021773fedc1dbf7}
+received The character received from PuTTY new becomes 1 if there is a new character being received from PuTTY input\_\-arr An array of characters used to store the command being input pos The position in input\_\-arr we are currently writing to 

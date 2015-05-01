@@ -1,0 +1,271 @@
+\hypertarget{lcd_8c}{
+\section{lcd.c File Reference}
+\label{lcd_8c}\index{lcd.c@{lcd.c}}
+}
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$util/delay.h$>$}\par
+{\ttfamily \#include \char`\"{}lcd.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{lcd_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\_\-CPU}~16000000ul
+\item 
+\#define \hyperlink{lcd_8c_a19693eac3018d3e7800fde141921b812}{LCD\_\-WIDTH}~20
+\item 
+\#define \hyperlink{lcd_8c_a53a8b2a971de4b88047192655a48b651}{LCD\_\-HEIGHT}~4
+\item 
+\#define \hyperlink{lcd_8c_aa9d8a09151949151e9b1d9a3ddff9e4f}{LCD\_\-TOTAL\_\-CHARS}~(LCD\_\-WIDTH$\ast$LCD\_\-HEIGHT)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lcd_8c_a0f5c51646758982aeb96aa1665d02878}{lcd\_\-toggle\_\-clear} (char delay)
+\begin{DoxyCompactList}\small\item\em Triggers loading of bits by LCD controller and clears bits after toggle. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a810efe7569cbc38fca8875182d237c30}{lcd\_\-write\_\-c} (char data)
+\begin{DoxyCompactList}\small\item\em Displays one character on LCD. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a1b92979dc26ecdb2a39ec2d554aa8dd5}{lcd\_\-puts} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Prints string to lcd, starting at the current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a8a2df35a5e63e5b4cf6b83ecde35bd02}{lcd\_\-home\_\-anyloc} (unsigned char location)
+\begin{DoxyCompactList}\small\item\em Sets character position to any valid location. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initializes PORTA to communicate with LCD controller. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a1df94c5b595fa706ca7e7d61cad1de86}{lcd\_\-command} (char data)
+\begin{DoxyCompactList}\small\item\em Submits command to LCD controller. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_\-clear} (void)
+\begin{DoxyCompactList}\small\item\em Clears the LCD. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a6fb9001b70d8f903fedad6ddbf64bde6}{lcd\_\-home\_\-line1} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to first line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_ad2c1324ade2f6bff55337cea3ca5b351}{lcd\_\-home\_\-line2} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to second line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_ad90b0c9fd11ce24e395f07dbe5617b1f}{lcd\_\-home\_\-line3} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to third line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a55c2a679388a5c8c7314aa4c494a60c6}{lcd\_\-home\_\-line4} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to fourth line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a9b86fcd0bce209f23ad6ca9c9693e410}{lcd\_\-display\_\-shift\_\-left} (void)
+\begin{DoxyCompactList}\small\item\em Shift display content left. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a1b59543ebb020ae74d6bcdf06e2b6d3b}{lcd\_\-putc} (char data)
+\begin{DoxyCompactList}\small\item\em Prints one character at the current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8c_a575d444e546b50b599790bb52b0891fc}{lprintf} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Print a formatted string to the LCD screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{lcd_8c_a43bafb28b29491ec7f871319b5a3b2f8}{
+\index{lcd.c@{lcd.c}!F\_\-CPU@{F\_\-CPU}}
+\index{F\_\-CPU@{F\_\-CPU}!lcd.c@{lcd.c}}
+\subsubsection[{F\_\-CPU}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\_\-CPU~16000000ul}}
+\label{lcd_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+\hypertarget{lcd_8c_a53a8b2a971de4b88047192655a48b651}{
+\index{lcd.c@{lcd.c}!LCD\_\-HEIGHT@{LCD\_\-HEIGHT}}
+\index{LCD\_\-HEIGHT@{LCD\_\-HEIGHT}!lcd.c@{lcd.c}}
+\subsubsection[{LCD\_\-HEIGHT}]{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-HEIGHT~4}}
+\label{lcd_8c_a53a8b2a971de4b88047192655a48b651}
+\hypertarget{lcd_8c_aa9d8a09151949151e9b1d9a3ddff9e4f}{
+\index{lcd.c@{lcd.c}!LCD\_\-TOTAL\_\-CHARS@{LCD\_\-TOTAL\_\-CHARS}}
+\index{LCD\_\-TOTAL\_\-CHARS@{LCD\_\-TOTAL\_\-CHARS}!lcd.c@{lcd.c}}
+\subsubsection[{LCD\_\-TOTAL\_\-CHARS}]{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-TOTAL\_\-CHARS~(LCD\_\-WIDTH$\ast$LCD\_\-HEIGHT)}}
+\label{lcd_8c_aa9d8a09151949151e9b1d9a3ddff9e4f}
+\hypertarget{lcd_8c_a19693eac3018d3e7800fde141921b812}{
+\index{lcd.c@{lcd.c}!LCD\_\-WIDTH@{LCD\_\-WIDTH}}
+\index{LCD\_\-WIDTH@{LCD\_\-WIDTH}!lcd.c@{lcd.c}}
+\subsubsection[{LCD\_\-WIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-WIDTH~20}}
+\label{lcd_8c_a19693eac3018d3e7800fde141921b812}
+
+
+\subsection{Function Documentation}
+\hypertarget{lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}{
+\index{lcd.c@{lcd.c}!lcd\_\-clear@{lcd\_\-clear}}
+\index{lcd\_\-clear@{lcd\_\-clear}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_ad235a86241458b1e7b8771688bfdaf9a}
+
+
+Clears the LCD. 
+
+\hypertarget{lcd_8c_a1df94c5b595fa706ca7e7d61cad1de86}{
+\index{lcd.c@{lcd.c}!lcd\_\-command@{lcd\_\-command}}
+\index{lcd\_\-command@{lcd\_\-command}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-command (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a1df94c5b595fa706ca7e7d61cad1de86}
+
+
+Submits command to LCD controller. 
+
+\hypertarget{lcd_8c_a9b86fcd0bce209f23ad6ca9c9693e410}{
+\index{lcd.c@{lcd.c}!lcd\_\-display\_\-shift\_\-left@{lcd\_\-display\_\-shift\_\-left}}
+\index{lcd\_\-display\_\-shift\_\-left@{lcd\_\-display\_\-shift\_\-left}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-display\_\-shift\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-display\_\-shift\_\-left (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a9b86fcd0bce209f23ad6ca9c9693e410}
+
+
+Shift display content left. 
+
+\hypertarget{lcd_8c_a8a2df35a5e63e5b4cf6b83ecde35bd02}{
+\index{lcd.c@{lcd.c}!lcd\_\-home\_\-anyloc@{lcd\_\-home\_\-anyloc}}
+\index{lcd\_\-home\_\-anyloc@{lcd\_\-home\_\-anyloc}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-home\_\-anyloc}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-anyloc (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{location}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a8a2df35a5e63e5b4cf6b83ecde35bd02}
+
+
+Sets character position to any valid location. 
+
+\hypertarget{lcd_8c_a6fb9001b70d8f903fedad6ddbf64bde6}{
+\index{lcd.c@{lcd.c}!lcd\_\-home\_\-line1@{lcd\_\-home\_\-line1}}
+\index{lcd\_\-home\_\-line1@{lcd\_\-home\_\-line1}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-home\_\-line1}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a6fb9001b70d8f903fedad6ddbf64bde6}
+
+
+Sets character position to first line first position. 
+
+Sets cursor position to left side of a given line. \hypertarget{lcd_8c_ad2c1324ade2f6bff55337cea3ca5b351}{
+\index{lcd.c@{lcd.c}!lcd\_\-home\_\-line2@{lcd\_\-home\_\-line2}}
+\index{lcd\_\-home\_\-line2@{lcd\_\-home\_\-line2}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-home\_\-line2}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_ad2c1324ade2f6bff55337cea3ca5b351}
+
+
+Sets character position to second line first position. 
+
+\hypertarget{lcd_8c_ad90b0c9fd11ce24e395f07dbe5617b1f}{
+\index{lcd.c@{lcd.c}!lcd\_\-home\_\-line3@{lcd\_\-home\_\-line3}}
+\index{lcd\_\-home\_\-line3@{lcd\_\-home\_\-line3}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-home\_\-line3}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line3 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_ad90b0c9fd11ce24e395f07dbe5617b1f}
+
+
+Sets character position to third line first position. 
+
+\hypertarget{lcd_8c_a55c2a679388a5c8c7314aa4c494a60c6}{
+\index{lcd.c@{lcd.c}!lcd\_\-home\_\-line4@{lcd\_\-home\_\-line4}}
+\index{lcd\_\-home\_\-line4@{lcd\_\-home\_\-line4}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-home\_\-line4}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line4 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a55c2a679388a5c8c7314aa4c494a60c6}
+
+
+Sets character position to fourth line first position. 
+
+\hypertarget{lcd_8c_a6842775ba83d166f02b8fef8bb63b1e6}{
+\index{lcd.c@{lcd.c}!lcd\_\-init@{lcd\_\-init}}
+\index{lcd\_\-init@{lcd\_\-init}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a6842775ba83d166f02b8fef8bb63b1e6}
+
+
+Initializes PORTA to communicate with LCD controller. 
+
+\hypertarget{lcd_8c_a1b59543ebb020ae74d6bcdf06e2b6d3b}{
+\index{lcd.c@{lcd.c}!lcd\_\-putc@{lcd\_\-putc}}
+\index{lcd\_\-putc@{lcd\_\-putc}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-putc (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a1b59543ebb020ae74d6bcdf06e2b6d3b}
+
+
+Prints one character at the current cursor position. 
+
+\hypertarget{lcd_8c_a1b92979dc26ecdb2a39ec2d554aa8dd5}{
+\index{lcd.c@{lcd.c}!lcd\_\-puts@{lcd\_\-puts}}
+\index{lcd\_\-puts@{lcd\_\-puts}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-puts (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a1b92979dc26ecdb2a39ec2d554aa8dd5}
+
+
+Prints string to lcd, starting at the current cursor position. 
+
+Prints a string of characters starting at the current cursor position. \hypertarget{lcd_8c_a0f5c51646758982aeb96aa1665d02878}{
+\index{lcd.c@{lcd.c}!lcd\_\-toggle\_\-clear@{lcd\_\-toggle\_\-clear}}
+\index{lcd\_\-toggle\_\-clear@{lcd\_\-toggle\_\-clear}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-toggle\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-toggle\_\-clear (
+\begin{DoxyParamCaption}
+\item[{char}]{delay}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a0f5c51646758982aeb96aa1665d02878}
+
+
+Triggers loading of bits by LCD controller and clears bits after toggle. 
+
+\hypertarget{lcd_8c_a810efe7569cbc38fca8875182d237c30}{
+\index{lcd.c@{lcd.c}!lcd\_\-write\_\-c@{lcd\_\-write\_\-c}}
+\index{lcd\_\-write\_\-c@{lcd\_\-write\_\-c}!lcd.c@{lcd.c}}
+\subsubsection[{lcd\_\-write\_\-c}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-write\_\-c (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a810efe7569cbc38fca8875182d237c30}
+
+
+Displays one character on LCD. 
+
+\hypertarget{lcd_8c_a575d444e546b50b599790bb52b0891fc}{
+\index{lcd.c@{lcd.c}!lprintf@{lprintf}}
+\index{lprintf@{lprintf}!lcd.c@{lcd.c}}
+\subsubsection[{lprintf}]{\setlength{\rightskip}{0pt plus 5cm}void lprintf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8c_a575d444e546b50b599790bb52b0891fc}
+
+
+Print a formatted string to the LCD screen. 
+
+Prints a string to the lcd; Google \char`\"{}printf\char`\"{} for documentation.
+
+Mimics the C library function printf for writing to the LCD screen. Google \char`\"{}printf\char`\"{} for documentation on the formatter string.
+
+Code from this site was also used: \href{http://www.ozzu.com/cpp-tutorials/tutorial-writing-custom-printf-wrapper-function-t89166.html}{\tt http://www.ozzu.com/cpp-\/tutorials/tutorial-\/writing-\/custom-\/printf-\/wrapper-\/function-\/t89166.html} \begin{DoxyAuthor}{Author}
+Kerrick Staley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/06/2011 
+\end{DoxyDate}

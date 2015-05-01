@@ -1,0 +1,63 @@
+\hypertarget{servo_8c}{
+\section{servo.c File Reference}
+\label{servo_8c}\index{servo.c@{servo.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}util.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}servo.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{servo_8c_a9a6cca57e7cd20ae2ee6d92e289583ae}{servo\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the servo. \end{DoxyCompactList}\item 
+void \hyperlink{servo_8c_ac5b24084a1aea294a9cc4b9c4b223fc9}{set\_\-servo} (double \hyperlink{bluetooth_8h_aa54b4601b8f321053e3afab8e424f8f1}{pos})
+\begin{DoxyCompactList}\small\item\em resets servo to original position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{servo_8c_ab6d8df8ffd0888ed97f112eac04fb2c0}{current\_\-pos}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{servo_8c_a9a6cca57e7cd20ae2ee6d92e289583ae}{
+\index{servo.c@{servo.c}!servo\_\-init@{servo\_\-init}}
+\index{servo\_\-init@{servo\_\-init}!servo.c@{servo.c}}
+\subsubsection[{servo\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void servo\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{servo_8c_a9a6cca57e7cd20ae2ee6d92e289583ae}
+
+
+Initializes the servo. 
+
+\hypertarget{servo_8c_ac5b24084a1aea294a9cc4b9c4b223fc9}{
+\index{servo.c@{servo.c}!set\_\-servo@{set\_\-servo}}
+\index{set\_\-servo@{set\_\-servo}!servo.c@{servo.c}}
+\subsubsection[{set\_\-servo}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-servo (
+\begin{DoxyParamCaption}
+\item[{double}]{pos}
+\end{DoxyParamCaption}
+)}}
+\label{servo_8c_ac5b24084a1aea294a9cc4b9c4b223fc9}
+
+
+resets servo to original position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & a double between 0.0 and 180.0 degrees that indicates what position to turn the servo \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{servo_8c_ab6d8df8ffd0888ed97f112eac04fb2c0}{
+\index{servo.c@{servo.c}!current\_\-pos@{current\_\-pos}}
+\index{current\_\-pos@{current\_\-pos}!servo.c@{servo.c}}
+\subsubsection[{current\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf current\_\-pos}}}
+\label{servo_8c_ab6d8df8ffd0888ed97f112eac04fb2c0}

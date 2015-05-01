@@ -1,0 +1,111 @@
+\hypertarget{hazard_8c}{
+\section{hazard.c File Reference}
+\label{hazard_8c}\index{hazard.c@{hazard.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include \char`\"{}open\_\-interface.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}bluetooth.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{hazard_8c_a23afea493e2e4ab17cfcef118c4b0197}{check\_\-cliff} (\hyperlink{structoi__t}{oi\_\-t} $\ast$sensor\_\-status)
+\item 
+int \hyperlink{hazard_8c_a827ad873f4c350729c41ac547de3f308}{check\_\-virtual\_\-wall} (\hyperlink{structoi__t}{oi\_\-t} $\ast$sensor\_\-status)
+\item 
+int \hyperlink{hazard_8c_ab340f7b409035e0c26b150df80bc8a3e}{check\_\-bump\_\-sensor} (\hyperlink{structoi__t}{oi\_\-t} $\ast$sensor\_\-status)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{hazard_8c_a14dbab5012fda9ffb3c8957e7b5c8cca}{old\_\-cl} = 0
+\item 
+int \hyperlink{hazard_8c_aa4426fee6a276b0677118a81d583a5e2}{old\_\-cfl} = 0
+\item 
+int \hyperlink{hazard_8c_a7a7d68c6e45fc3b96abb25d026f0640d}{old\_\-cfr} = 0
+\item 
+int \hyperlink{hazard_8c_a32768ce2d2cf1837be125952ff71a817}{old\_\-cr} = 0
+\item 
+int \hyperlink{hazard_8c_a9bf46b8814c24dc8644686b4d2d78fb7}{old\_\-bump} = 0
+\item 
+int \hyperlink{hazard_8c_a4b4bff308a0cc223495b11793e52d65f}{old\_\-wall} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{hazard_8c_ab340f7b409035e0c26b150df80bc8a3e}{
+\index{hazard.c@{hazard.c}!check\_\-bump\_\-sensor@{check\_\-bump\_\-sensor}}
+\index{check\_\-bump\_\-sensor@{check\_\-bump\_\-sensor}!hazard.c@{hazard.c}}
+\subsubsection[{check\_\-bump\_\-sensor}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-bump\_\-sensor (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{sensor\_\-status}
+\end{DoxyParamCaption}
+)}}
+\label{hazard_8c_ab340f7b409035e0c26b150df80bc8a3e}
+Bump sensor function to detect if an object is bumped and prints to the putty which bumper is tripped. 
+\begin{DoxyParams}{Parameters}
+{\em sensor\_\-status} & -\/ the robot \\
+\hline
+\end{DoxyParams}
+\hypertarget{hazard_8c_a23afea493e2e4ab17cfcef118c4b0197}{
+\index{hazard.c@{hazard.c}!check\_\-cliff@{check\_\-cliff}}
+\index{check\_\-cliff@{check\_\-cliff}!hazard.c@{hazard.c}}
+\subsubsection[{check\_\-cliff}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-cliff (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{sensor\_\-status}
+\end{DoxyParamCaption}
+)}}
+\label{hazard_8c_a23afea493e2e4ab17cfcef118c4b0197}
+Checks each of the cliff sensors and returns 1 if the sensor is tripped and prints to putty which sensor was tripped. 
+\begin{DoxyParams}{Parameters}
+{\em sensor\_\-status} & -\/ the robot \\
+\hline
+\end{DoxyParams}
+\hypertarget{hazard_8c_a827ad873f4c350729c41ac547de3f308}{
+\index{hazard.c@{hazard.c}!check\_\-virtual\_\-wall@{check\_\-virtual\_\-wall}}
+\index{check\_\-virtual\_\-wall@{check\_\-virtual\_\-wall}!hazard.c@{hazard.c}}
+\subsubsection[{check\_\-virtual\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}int check\_\-virtual\_\-wall (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{sensor\_\-status}
+\end{DoxyParamCaption}
+)}}
+\label{hazard_8c_a827ad873f4c350729c41ac547de3f308}
+Virtual wall sensor function to detect the edge and prints to the putty that the wall was detected. 
+\begin{DoxyParams}{Parameters}
+{\em sensor\_\-status} & -\/ the robot \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{hazard_8c_a9bf46b8814c24dc8644686b4d2d78fb7}{
+\index{hazard.c@{hazard.c}!old\_\-bump@{old\_\-bump}}
+\index{old\_\-bump@{old\_\-bump}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-bump}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-bump} = 0}}
+\label{hazard_8c_a9bf46b8814c24dc8644686b4d2d78fb7}
+\hypertarget{hazard_8c_aa4426fee6a276b0677118a81d583a5e2}{
+\index{hazard.c@{hazard.c}!old\_\-cfl@{old\_\-cfl}}
+\index{old\_\-cfl@{old\_\-cfl}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-cfl}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-cfl} = 0}}
+\label{hazard_8c_aa4426fee6a276b0677118a81d583a5e2}
+\hypertarget{hazard_8c_a7a7d68c6e45fc3b96abb25d026f0640d}{
+\index{hazard.c@{hazard.c}!old\_\-cfr@{old\_\-cfr}}
+\index{old\_\-cfr@{old\_\-cfr}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-cfr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-cfr} = 0}}
+\label{hazard_8c_a7a7d68c6e45fc3b96abb25d026f0640d}
+\hypertarget{hazard_8c_a14dbab5012fda9ffb3c8957e7b5c8cca}{
+\index{hazard.c@{hazard.c}!old\_\-cl@{old\_\-cl}}
+\index{old\_\-cl@{old\_\-cl}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-cl}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-cl} = 0}}
+\label{hazard_8c_a14dbab5012fda9ffb3c8957e7b5c8cca}
+\hypertarget{hazard_8c_a32768ce2d2cf1837be125952ff71a817}{
+\index{hazard.c@{hazard.c}!old\_\-cr@{old\_\-cr}}
+\index{old\_\-cr@{old\_\-cr}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-cr}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-cr} = 0}}
+\label{hazard_8c_a32768ce2d2cf1837be125952ff71a817}
+\hypertarget{hazard_8c_a4b4bff308a0cc223495b11793e52d65f}{
+\index{hazard.c@{hazard.c}!old\_\-wall@{old\_\-wall}}
+\index{old\_\-wall@{old\_\-wall}!hazard.c@{hazard.c}}
+\subsubsection[{old\_\-wall}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-wall} = 0}}
+\label{hazard_8c_a4b4bff308a0cc223495b11793e52d65f}

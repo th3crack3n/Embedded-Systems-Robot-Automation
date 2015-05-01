@@ -1,0 +1,61 @@
+\hypertarget{sonar__distance_8h}{
+\section{sonar\_\-distance.h File Reference}
+\label{sonar__distance_8h}\index{sonar\_\-distance.h@{sonar\_\-distance.h}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sonar__distance_8h_a5da59e05fa5ade4be7c7656aee78291a}{ISR} (TIMER1\_\-CAPT\_\-vect)
+\begin{DoxyCompactList}\small\item\em Interrupt for timer 1. \end{DoxyCompactList}\item 
+int \hyperlink{sonar__distance_8h_a8fc53e655718ec65e2e85bb5a80b9e79}{get\_\-sonar\_\-distance} ()
+\begin{DoxyCompactList}\small\item\em Uses sonar device to determine how far the closest object is away. \end{DoxyCompactList}\item 
+void \hyperlink{sonar__distance_8h_a914119ad5ddf40a745060999ed471dea}{sonar\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the ping sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sonar__distance_8h_a8fc53e655718ec65e2e85bb5a80b9e79}{
+\index{sonar\_\-distance.h@{sonar\_\-distance.h}!get\_\-sonar\_\-distance@{get\_\-sonar\_\-distance}}
+\index{get\_\-sonar\_\-distance@{get\_\-sonar\_\-distance}!sonar_distance.h@{sonar\_\-distance.h}}
+\subsubsection[{get\_\-sonar\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-sonar\_\-distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8h_a8fc53e655718ec65e2e85bb5a80b9e79}
+
+
+Uses sonar device to determine how far the closest object is away. 
+
+\begin{DoxyReturn}{Returns}
+Distance received by ping sensor. 
+\end{DoxyReturn}
+\hypertarget{sonar__distance_8h_a5da59e05fa5ade4be7c7656aee78291a}{
+\index{sonar\_\-distance.h@{sonar\_\-distance.h}!ISR@{ISR}}
+\index{ISR@{ISR}!sonar_distance.h@{sonar\_\-distance.h}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{TIMER1\_\-CAPT\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8h_a5da59e05fa5ade4be7c7656aee78291a}
+
+
+Interrupt for timer 1. 
+
+\hypertarget{sonar__distance_8h_a914119ad5ddf40a745060999ed471dea}{
+\index{sonar\_\-distance.h@{sonar\_\-distance.h}!sonar\_\-init@{sonar\_\-init}}
+\index{sonar\_\-init@{sonar\_\-init}!sonar_distance.h@{sonar\_\-distance.h}}
+\subsubsection[{sonar\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sonar\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8h_a914119ad5ddf40a745060999ed471dea}
+
+
+Initializes the ping sensor. 
+

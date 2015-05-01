@@ -1,0 +1,138 @@
+\hypertarget{util_8h}{
+\section{util.h File Reference}
+\label{util_8h}\index{util.h@{util.h}}
+}
+{\ttfamily \#include $<$inttypes.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{util_8h_a81f8b753fa3af751d39ae3ffdddb5bbd}{wait\_\-ms} (unsigned int time\_\-val)
+\begin{DoxyCompactList}\small\item\em Blocks for a specified number of milliseconds. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_a0f93cf294588bd654e61dc362c7517a9}{shaft\_\-encoder\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Shaft encoder initialization. \end{DoxyCompactList}\item 
+int8\_\-t \hyperlink{util_8h_a475f14f8ad1deaf4dd42953d7c814ec1}{read\_\-shaft\_\-encoder} (void)
+\begin{DoxyCompactList}\small\item\em Shaft encoder read function. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_a4808efef61f73d6624f055ede091a83d}{stepper\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize Stepper Motor. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_a9ce12f4e9ee54399eed7c0adde445114}{move\_\-stepper\_\-motor\_\-by\_\-step} (int num\_\-steps, int direction)
+\begin{DoxyCompactList}\small\item\em Stepper motor move function. \end{DoxyCompactList}\item 
+void \hyperlink{util_8h_aae8b6fe63d14bdb55a6c985eb14f74fb}{init\_\-push\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Initialize PORTC, which is used by the push buttons. \end{DoxyCompactList}\item 
+uint8\_\-t \hyperlink{util_8h_a51a73438084f0b2ec94de173281f1015}{read\_\-push\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Return the position of button being pushed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{util_8h_aae8b6fe63d14bdb55a6c985eb14f74fb}{
+\index{util.h@{util.h}!init\_\-push\_\-buttons@{init\_\-push\_\-buttons}}
+\index{init\_\-push\_\-buttons@{init\_\-push\_\-buttons}!util.h@{util.h}}
+\subsubsection[{init\_\-push\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-push\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_aae8b6fe63d14bdb55a6c985eb14f74fb}
+
+
+Initialize PORTC, which is used by the push buttons. 
+
+\hypertarget{util_8h_a9ce12f4e9ee54399eed7c0adde445114}{
+\index{util.h@{util.h}!move\_\-stepper\_\-motor\_\-by\_\-step@{move\_\-stepper\_\-motor\_\-by\_\-step}}
+\index{move\_\-stepper\_\-motor\_\-by\_\-step@{move\_\-stepper\_\-motor\_\-by\_\-step}!util.h@{util.h}}
+\subsubsection[{move\_\-stepper\_\-motor\_\-by\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}void move\_\-stepper\_\-motor\_\-by\_\-step (
+\begin{DoxyParamCaption}
+\item[{int}]{num\_\-steps, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a9ce12f4e9ee54399eed7c0adde445114}
+
+
+Stepper motor move function. 
+
+Stepper motor move function.
+
+Turn the stepper motor a given number of steps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\_\-steps} & A value between 1 and 200 steps (1.8 to 360 degrees) \\
+\hline
+{\em direction} & Indication of direction: 1 for CW and -\/1 for CCW \\
+\hline
+\end{DoxyParams}
+\hypertarget{util_8h_a51a73438084f0b2ec94de173281f1015}{
+\index{util.h@{util.h}!read\_\-push\_\-buttons@{read\_\-push\_\-buttons}}
+\index{read\_\-push\_\-buttons@{read\_\-push\_\-buttons}!util.h@{util.h}}
+\subsubsection[{read\_\-push\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t read\_\-push\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a51a73438084f0b2ec94de173281f1015}
+
+
+Return the position of button being pushed. 
+
+Return the position of button being pushed. \begin{DoxyReturn}{Returns}
+the position of the button being pushed. A 1 is the rightmost button. 0 indicates no button being pressed 
+\end{DoxyReturn}
+\hypertarget{util_8h_a475f14f8ad1deaf4dd42953d7c814ec1}{
+\index{util.h@{util.h}!read\_\-shaft\_\-encoder@{read\_\-shaft\_\-encoder}}
+\index{read\_\-shaft\_\-encoder@{read\_\-shaft\_\-encoder}!util.h@{util.h}}
+\subsubsection[{read\_\-shaft\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t read\_\-shaft\_\-encoder (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a475f14f8ad1deaf4dd42953d7c814ec1}
+
+
+Shaft encoder read function. 
+
+Shaft encoder read function.
+
+Reads the two switches of the shaft encoder and compares the values to the previous read. This function should be called very frequently for the best results.
+
+\begin{DoxyReturn}{Returns}
+a value indicating the shaft encoder has moved: 0 = no rotation (switches did not change) 1 = CW rotation -\/1 = CCW rotation 
+\end{DoxyReturn}
+\hypertarget{util_8h_a0f93cf294588bd654e61dc362c7517a9}{
+\index{util.h@{util.h}!shaft\_\-encoder\_\-init@{shaft\_\-encoder\_\-init}}
+\index{shaft\_\-encoder\_\-init@{shaft\_\-encoder\_\-init}!util.h@{util.h}}
+\subsubsection[{shaft\_\-encoder\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void shaft\_\-encoder\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a0f93cf294588bd654e61dc362c7517a9}
+
+
+Shaft encoder initialization. 
+
+\hypertarget{util_8h_a4808efef61f73d6624f055ede091a83d}{
+\index{util.h@{util.h}!stepper\_\-init@{stepper\_\-init}}
+\index{stepper\_\-init@{stepper\_\-init}!util.h@{util.h}}
+\subsubsection[{stepper\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void stepper\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a4808efef61f73d6624f055ede091a83d}
+
+
+Initialize Stepper Motor. 
+
+\hypertarget{util_8h_a81f8b753fa3af751d39ae3ffdddb5bbd}{
+\index{util.h@{util.h}!wait\_\-ms@{wait\_\-ms}}
+\index{wait\_\-ms@{wait\_\-ms}!util.h@{util.h}}
+\subsubsection[{wait\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}void wait\_\-ms (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time\_\-val}
+\end{DoxyParamCaption}
+)}}
+\label{util_8h_a81f8b753fa3af751d39ae3ffdddb5bbd}
+
+
+Blocks for a specified number of milliseconds. 
+

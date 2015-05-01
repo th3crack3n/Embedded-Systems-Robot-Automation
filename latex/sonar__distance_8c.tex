@@ -1,0 +1,91 @@
+\hypertarget{sonar__distance_8c}{
+\section{sonar\_\-distance.c File Reference}
+\label{sonar__distance_8c}\index{sonar\_\-distance.c@{sonar\_\-distance.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include \char`\"{}util.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}lcd.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{sonar__distance_8c_a5da59e05fa5ade4be7c7656aee78291a}{ISR} (TIMER1\_\-CAPT\_\-vect)
+\begin{DoxyCompactList}\small\item\em Interrupt for timer 1. \end{DoxyCompactList}\item 
+int \hyperlink{sonar__distance_8c_a8fc53e655718ec65e2e85bb5a80b9e79}{get\_\-sonar\_\-distance} ()
+\begin{DoxyCompactList}\small\item\em Uses sonar device to determine how far the closest object is away. \end{DoxyCompactList}\item 
+void \hyperlink{sonar__distance_8c_a914119ad5ddf40a745060999ed471dea}{sonar\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the ping sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{sonar__distance_8c_ade3088f20b9a7390f11e179529edaad7}{start}
+\item 
+volatile int \hyperlink{sonar__distance_8c_a31de4209a5a90bc6a7406826e9d8dda4}{end}
+\item 
+volatile int \hyperlink{sonar__distance_8c_a12efbdd4f797be6cbd6d8bc856cf4ebc}{done2} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{sonar__distance_8c_a8fc53e655718ec65e2e85bb5a80b9e79}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!get\_\-sonar\_\-distance@{get\_\-sonar\_\-distance}}
+\index{get\_\-sonar\_\-distance@{get\_\-sonar\_\-distance}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{get\_\-sonar\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-sonar\_\-distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8c_a8fc53e655718ec65e2e85bb5a80b9e79}
+
+
+Uses sonar device to determine how far the closest object is away. 
+
+\begin{DoxyReturn}{Returns}
+Distance received by ping sensor. 
+\end{DoxyReturn}
+\hypertarget{sonar__distance_8c_a5da59e05fa5ade4be7c7656aee78291a}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!ISR@{ISR}}
+\index{ISR@{ISR}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{TIMER1\_\-CAPT\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8c_a5da59e05fa5ade4be7c7656aee78291a}
+
+
+Interrupt for timer 1. 
+
+\hypertarget{sonar__distance_8c_a914119ad5ddf40a745060999ed471dea}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!sonar\_\-init@{sonar\_\-init}}
+\index{sonar\_\-init@{sonar\_\-init}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{sonar\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sonar\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{sonar__distance_8c_a914119ad5ddf40a745060999ed471dea}
+
+
+Initializes the ping sensor. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{sonar__distance_8c_a12efbdd4f797be6cbd6d8bc856cf4ebc}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!done2@{done2}}
+\index{done2@{done2}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{done2}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf done2} = 0}}
+\label{sonar__distance_8c_a12efbdd4f797be6cbd6d8bc856cf4ebc}
+\hypertarget{sonar__distance_8c_a31de4209a5a90bc6a7406826e9d8dda4}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!end@{end}}
+\index{end@{end}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf end}}}
+\label{sonar__distance_8c_a31de4209a5a90bc6a7406826e9d8dda4}
+\hypertarget{sonar__distance_8c_ade3088f20b9a7390f11e179529edaad7}{
+\index{sonar\_\-distance.c@{sonar\_\-distance.c}!start@{start}}
+\index{start@{start}!sonar_distance.c@{sonar\_\-distance.c}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf start}}}
+\label{sonar__distance_8c_ade3088f20b9a7390f11e179529edaad7}
+start Start time of when the sonar returns during the rising edge end End time of when the sonar stops receiving signals during the falling edge done2 Lets user know when the sonar finishes receiving sonar signal 

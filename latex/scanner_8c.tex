@@ -1,0 +1,80 @@
+\hypertarget{scanner_8c}{
+\section{scanner.c File Reference}
+\label{scanner_8c}\index{scanner.c@{scanner.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$avr/sleep.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}servo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}bluetooth.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ir\_\-distance.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}sonar\_\-distance.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgap}{gap}
+\begin{DoxyCompactList}\small\item\em Structure to help calculate the gap between two objects. \end{DoxyCompactList}\item 
+struct \hyperlink{structobject}{object}
+\begin{DoxyCompactList}\small\item\em Structure to help keep track of the objects detected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scanner_8c_aec54f69564fbbbac5032deae9361438a}{scanner\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initialize Servo, ADC, and Sonar. \end{DoxyCompactList}\item 
+void \hyperlink{scanner_8c_a047344685c73aae3707ffbd91c176a4b}{scan} ()
+\begin{DoxyCompactList}\small\item\em Scans the field and sends data back to PuTTY. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{scanner_8c_a047344685c73aae3707ffbd91c176a4b}{
+\index{scanner.c@{scanner.c}!scan@{scan}}
+\index{scan@{scan}!scanner.c@{scanner.c}}
+\subsubsection[{scan}]{\setlength{\rightskip}{0pt plus 5cm}void scan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{scanner_8c_a047344685c73aae3707ffbd91c176a4b}
+
+
+Scans the field and sends data back to PuTTY. 
+
+Uses IR and Sonar to scan the area the robot is looking at, printing what is sees to putty. 
+
+Reading from ADC
+
+Output stream
+
+IR Distance and Sonar Distance
+
+1 if new object is found
+
+1 if a gap has finished or a new object has finished
+
+Takes 10 ADC readings and averages them
+
+Gets the Sonar Distance
+
+If a new object is located initialize the new object and calculate the gap information from the previous object to current object
+
+If the object has finished, then we calculate object information and initialize a new gap structure
+
+Adds sonar distance if IR Sensor does not detect an object otherwise add IR Distance
+
+increment the servo 2 degrees from 0 to 180 
+
+\hypertarget{scanner_8c_aec54f69564fbbbac5032deae9361438a}{
+\index{scanner.c@{scanner.c}!scanner\_\-init@{scanner\_\-init}}
+\index{scanner\_\-init@{scanner\_\-init}!scanner.c@{scanner.c}}
+\subsubsection[{scanner\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void scanner\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{scanner_8c_aec54f69564fbbbac5032deae9361438a}
+
+
+Initialize Servo, ADC, and Sonar. 
+

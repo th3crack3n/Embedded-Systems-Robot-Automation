@@ -1,0 +1,74 @@
+\hypertarget{ir__distance_8h}{
+\section{ir\_\-distance.h File Reference}
+\label{ir__distance_8h}\index{ir\_\-distance.h@{ir\_\-distance.h}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ir__distance_8h_a69f491a768a81c2cf99ee2653ad3002d}{ADC\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Initializes ADC. \end{DoxyCompactList}\item 
+unsigned \hyperlink{ir__distance_8h_a1eac6972ed43181b6c32c5d05d61ca27}{ADC\_\-read} ()
+\begin{DoxyCompactList}\small\item\em reads the ADC input \end{DoxyCompactList}\item 
+int \hyperlink{ir__distance_8h_a7741d566859c5a370ce5a221bf507047}{get\_\-distance} (int value)
+\item 
+int \hyperlink{ir__distance_8h_a4008875a88d801f47ba0514e894146dc}{pos\_\-ave} (int \hyperlink{bluetooth_8h_a547b57d0e0b3b31293a55dc0eff0d4d7}{new}, int $\ast$ave)
+\begin{DoxyCompactList}\small\item\em Helper function to calculate the actual distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ir__distance_8h_a69f491a768a81c2cf99ee2653ad3002d}{
+\index{ir\_\-distance.h@{ir\_\-distance.h}!ADC\_\-init@{ADC\_\-init}}
+\index{ADC\_\-init@{ADC\_\-init}!ir_distance.h@{ir\_\-distance.h}}
+\subsubsection[{ADC\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ADC\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{ir__distance_8h_a69f491a768a81c2cf99ee2653ad3002d}
+
+
+Initializes ADC. 
+
+\hypertarget{ir__distance_8h_a1eac6972ed43181b6c32c5d05d61ca27}{
+\index{ir\_\-distance.h@{ir\_\-distance.h}!ADC\_\-read@{ADC\_\-read}}
+\index{ADC\_\-read@{ADC\_\-read}!ir_distance.h@{ir\_\-distance.h}}
+\subsubsection[{ADC\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}unsigned ADC\_\-read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{ir__distance_8h_a1eac6972ed43181b6c32c5d05d61ca27}
+
+
+reads the ADC input 
+
+\hypertarget{ir__distance_8h_a7741d566859c5a370ce5a221bf507047}{
+\index{ir\_\-distance.h@{ir\_\-distance.h}!get\_\-distance@{get\_\-distance}}
+\index{get\_\-distance@{get\_\-distance}!ir_distance.h@{ir\_\-distance.h}}
+\subsubsection[{get\_\-distance}]{\setlength{\rightskip}{0pt plus 5cm}int get\_\-distance (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{ir__distance_8h_a7741d566859c5a370ce5a221bf507047}
+Returns the distance detected. 
+\begin{DoxyParams}{Parameters}
+{\em value} & -\/ the ADC input \\
+\hline
+\end{DoxyParams}
+\hypertarget{ir__distance_8h_a4008875a88d801f47ba0514e894146dc}{
+\index{ir\_\-distance.h@{ir\_\-distance.h}!pos\_\-ave@{pos\_\-ave}}
+\index{pos\_\-ave@{pos\_\-ave}!ir_distance.h@{ir\_\-distance.h}}
+\subsubsection[{pos\_\-ave}]{\setlength{\rightskip}{0pt plus 5cm}int pos\_\-ave (
+\begin{DoxyParamCaption}
+\item[{int}]{new, }
+\item[{int $\ast$}]{ave}
+\end{DoxyParamCaption}
+)}}
+\label{ir__distance_8h_a4008875a88d801f47ba0514e894146dc}
+
+
+Helper function to calculate the actual distance. 
+

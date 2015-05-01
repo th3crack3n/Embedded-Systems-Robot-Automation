@@ -1,0 +1,264 @@
+\hypertarget{lcd_8h}{
+\section{lcd.h File Reference}
+\label{lcd_8h}\index{lcd.h@{lcd.h}}
+}
+{\ttfamily \#include $<$inttypes.h$>$}\par
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{lcd_8h_aaabda7c2722dfdad3fb406e186be4d2d}{HD\_\-LCD\_\-CLEAR}~0x01
+\item 
+\#define \hyperlink{lcd_8h_a4ef1551f87724c3ac1e449b22bf7d138}{HD\_\-RETURN\_\-HOME}~0x02
+\item 
+\#define \hyperlink{lcd_8h_a51df3b1bb8cd82859b25c897dfdf2fbb}{HD\_\-CURSOR\_\-SHIFT\_\-DEC}~0x05
+\item 
+\#define \hyperlink{lcd_8h_a72595f0ec85ae5b90e3bdd46f0c17eb2}{HD\_\-CURSOR\_\-SHIFT\_\-INC}~0x07
+\item 
+\#define \hyperlink{lcd_8h_a58b0868e2e6ef863c909620296cb0b90}{HD\_\-DISPLAY\_\-CONTROL}~3
+\item 
+\#define \hyperlink{lcd_8h_a311d37e515d8595f0bc9cd66ea9826c3}{HD\_\-DISPLAY\_\-ON}~2
+\item 
+\#define \hyperlink{lcd_8h_aea4c4faf14e470e4305b4d0d52970ce6}{HD\_\-CURSOR\_\-ON}~1
+\item 
+\#define \hyperlink{lcd_8h_a6772c96a092ba214fd9f7ccae9720b38}{HD\_\-BLINK\_\-ON}~0
+\item 
+\#define \hyperlink{lcd_8h_a34ea6729c3f96d0fc4daadfdf8b2d9d7}{HD\_\-CURSOR\_\-MOVE\_\-LEFT}~0x10
+\item 
+\#define \hyperlink{lcd_8h_a153b3bd178fbca97e5313ff29a640aad}{HD\_\-CURSOR\_\-MOVE\_\-RIGHT}~0x14
+\item 
+\#define \hyperlink{lcd_8h_a9f297b248deaba17c2476cf6a639f807}{HD\_\-DISPLAY\_\-SHIFT\_\-LEFT}~0x18
+\item 
+\#define \hyperlink{lcd_8h_a79ed1fe715d9c516a784b53419a16990}{HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT}~0x1C
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lcd_8h_a6842775ba83d166f02b8fef8bb63b1e6}{lcd\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initializes PORTA to communicate with LCD controller. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a6fb9001b70d8f903fedad6ddbf64bde6}{lcd\_\-home\_\-line1} (void)
+\begin{DoxyCompactList}\small\item\em Sets cursor position to left side of a given line. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_ad2c1324ade2f6bff55337cea3ca5b351}{lcd\_\-home\_\-line2} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to second line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_ad90b0c9fd11ce24e395f07dbe5617b1f}{lcd\_\-home\_\-line3} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to third line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a55c2a679388a5c8c7314aa4c494a60c6}{lcd\_\-home\_\-line4} (void)
+\begin{DoxyCompactList}\small\item\em Sets character position to fourth line first position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a8a1b81a7de37e8483ceb56c27097dd32}{lprintf} (const char $\ast$formatter,...)
+\begin{DoxyCompactList}\small\item\em Prints a string to the lcd; Google \char`\"{}printf\char`\"{} for documentation. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a3f72561f3c962aa6225fa7094e18d045}{lcd\_\-puts} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Prints a string of characters starting at the current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a1b59543ebb020ae74d6bcdf06e2b6d3b}{lcd\_\-putc} (char data)
+\begin{DoxyCompactList}\small\item\em Prints one character at the current cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_ad235a86241458b1e7b8771688bfdaf9a}{lcd\_\-clear} (void)
+\begin{DoxyCompactList}\small\item\em Clears the LCD. \end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a1df94c5b595fa706ca7e7d61cad1de86}{lcd\_\-command} (char data)
+\begin{DoxyCompactList}\small\item\em Submits command to LCD controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{lcd_8h_a6772c96a092ba214fd9f7ccae9720b38}{
+\index{lcd.h@{lcd.h}!HD\_\-BLINK\_\-ON@{HD\_\-BLINK\_\-ON}}
+\index{HD\_\-BLINK\_\-ON@{HD\_\-BLINK\_\-ON}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-BLINK\_\-ON}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-BLINK\_\-ON~0}}
+\label{lcd_8h_a6772c96a092ba214fd9f7ccae9720b38}
+\hypertarget{lcd_8h_a34ea6729c3f96d0fc4daadfdf8b2d9d7}{
+\index{lcd.h@{lcd.h}!HD\_\-CURSOR\_\-MOVE\_\-LEFT@{HD\_\-CURSOR\_\-MOVE\_\-LEFT}}
+\index{HD\_\-CURSOR\_\-MOVE\_\-LEFT@{HD\_\-CURSOR\_\-MOVE\_\-LEFT}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-CURSOR\_\-MOVE\_\-LEFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-CURSOR\_\-MOVE\_\-LEFT~0x10}}
+\label{lcd_8h_a34ea6729c3f96d0fc4daadfdf8b2d9d7}
+\hypertarget{lcd_8h_a153b3bd178fbca97e5313ff29a640aad}{
+\index{lcd.h@{lcd.h}!HD\_\-CURSOR\_\-MOVE\_\-RIGHT@{HD\_\-CURSOR\_\-MOVE\_\-RIGHT}}
+\index{HD\_\-CURSOR\_\-MOVE\_\-RIGHT@{HD\_\-CURSOR\_\-MOVE\_\-RIGHT}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-CURSOR\_\-MOVE\_\-RIGHT}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-CURSOR\_\-MOVE\_\-RIGHT~0x14}}
+\label{lcd_8h_a153b3bd178fbca97e5313ff29a640aad}
+\hypertarget{lcd_8h_aea4c4faf14e470e4305b4d0d52970ce6}{
+\index{lcd.h@{lcd.h}!HD\_\-CURSOR\_\-ON@{HD\_\-CURSOR\_\-ON}}
+\index{HD\_\-CURSOR\_\-ON@{HD\_\-CURSOR\_\-ON}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-CURSOR\_\-ON}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-CURSOR\_\-ON~1}}
+\label{lcd_8h_aea4c4faf14e470e4305b4d0d52970ce6}
+\hypertarget{lcd_8h_a51df3b1bb8cd82859b25c897dfdf2fbb}{
+\index{lcd.h@{lcd.h}!HD\_\-CURSOR\_\-SHIFT\_\-DEC@{HD\_\-CURSOR\_\-SHIFT\_\-DEC}}
+\index{HD\_\-CURSOR\_\-SHIFT\_\-DEC@{HD\_\-CURSOR\_\-SHIFT\_\-DEC}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-CURSOR\_\-SHIFT\_\-DEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-CURSOR\_\-SHIFT\_\-DEC~0x05}}
+\label{lcd_8h_a51df3b1bb8cd82859b25c897dfdf2fbb}
+\hypertarget{lcd_8h_a72595f0ec85ae5b90e3bdd46f0c17eb2}{
+\index{lcd.h@{lcd.h}!HD\_\-CURSOR\_\-SHIFT\_\-INC@{HD\_\-CURSOR\_\-SHIFT\_\-INC}}
+\index{HD\_\-CURSOR\_\-SHIFT\_\-INC@{HD\_\-CURSOR\_\-SHIFT\_\-INC}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-CURSOR\_\-SHIFT\_\-INC}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-CURSOR\_\-SHIFT\_\-INC~0x07}}
+\label{lcd_8h_a72595f0ec85ae5b90e3bdd46f0c17eb2}
+\hypertarget{lcd_8h_a58b0868e2e6ef863c909620296cb0b90}{
+\index{lcd.h@{lcd.h}!HD\_\-DISPLAY\_\-CONTROL@{HD\_\-DISPLAY\_\-CONTROL}}
+\index{HD\_\-DISPLAY\_\-CONTROL@{HD\_\-DISPLAY\_\-CONTROL}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-DISPLAY\_\-CONTROL}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-DISPLAY\_\-CONTROL~3}}
+\label{lcd_8h_a58b0868e2e6ef863c909620296cb0b90}
+\hypertarget{lcd_8h_a311d37e515d8595f0bc9cd66ea9826c3}{
+\index{lcd.h@{lcd.h}!HD\_\-DISPLAY\_\-ON@{HD\_\-DISPLAY\_\-ON}}
+\index{HD\_\-DISPLAY\_\-ON@{HD\_\-DISPLAY\_\-ON}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-DISPLAY\_\-ON}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-DISPLAY\_\-ON~2}}
+\label{lcd_8h_a311d37e515d8595f0bc9cd66ea9826c3}
+\hypertarget{lcd_8h_a9f297b248deaba17c2476cf6a639f807}{
+\index{lcd.h@{lcd.h}!HD\_\-DISPLAY\_\-SHIFT\_\-LEFT@{HD\_\-DISPLAY\_\-SHIFT\_\-LEFT}}
+\index{HD\_\-DISPLAY\_\-SHIFT\_\-LEFT@{HD\_\-DISPLAY\_\-SHIFT\_\-LEFT}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-DISPLAY\_\-SHIFT\_\-LEFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-DISPLAY\_\-SHIFT\_\-LEFT~0x18}}
+\label{lcd_8h_a9f297b248deaba17c2476cf6a639f807}
+\hypertarget{lcd_8h_a79ed1fe715d9c516a784b53419a16990}{
+\index{lcd.h@{lcd.h}!HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT@{HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT}}
+\index{HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT@{HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-DISPLAY\_\-SHIFT\_\-RIGHT~0x1C}}
+\label{lcd_8h_a79ed1fe715d9c516a784b53419a16990}
+\hypertarget{lcd_8h_aaabda7c2722dfdad3fb406e186be4d2d}{
+\index{lcd.h@{lcd.h}!HD\_\-LCD\_\-CLEAR@{HD\_\-LCD\_\-CLEAR}}
+\index{HD\_\-LCD\_\-CLEAR@{HD\_\-LCD\_\-CLEAR}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-LCD\_\-CLEAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-LCD\_\-CLEAR~0x01}}
+\label{lcd_8h_aaabda7c2722dfdad3fb406e186be4d2d}
+\hypertarget{lcd_8h_a4ef1551f87724c3ac1e449b22bf7d138}{
+\index{lcd.h@{lcd.h}!HD\_\-RETURN\_\-HOME@{HD\_\-RETURN\_\-HOME}}
+\index{HD\_\-RETURN\_\-HOME@{HD\_\-RETURN\_\-HOME}!lcd.h@{lcd.h}}
+\subsubsection[{HD\_\-RETURN\_\-HOME}]{\setlength{\rightskip}{0pt plus 5cm}\#define HD\_\-RETURN\_\-HOME~0x02}}
+\label{lcd_8h_a4ef1551f87724c3ac1e449b22bf7d138}
+
+
+\subsection{Function Documentation}
+\hypertarget{lcd_8h_ad235a86241458b1e7b8771688bfdaf9a}{
+\index{lcd.h@{lcd.h}!lcd\_\-clear@{lcd\_\-clear}}
+\index{lcd\_\-clear@{lcd\_\-clear}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-clear}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-clear (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_ad235a86241458b1e7b8771688bfdaf9a}
+
+
+Clears the LCD. 
+
+\hypertarget{lcd_8h_a1df94c5b595fa706ca7e7d61cad1de86}{
+\index{lcd.h@{lcd.h}!lcd\_\-command@{lcd\_\-command}}
+\index{lcd\_\-command@{lcd\_\-command}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-command (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a1df94c5b595fa706ca7e7d61cad1de86}
+
+
+Submits command to LCD controller. 
+
+\hypertarget{lcd_8h_a6fb9001b70d8f903fedad6ddbf64bde6}{
+\index{lcd.h@{lcd.h}!lcd\_\-home\_\-line1@{lcd\_\-home\_\-line1}}
+\index{lcd\_\-home\_\-line1@{lcd\_\-home\_\-line1}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-home\_\-line1}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a6fb9001b70d8f903fedad6ddbf64bde6}
+
+
+Sets cursor position to left side of a given line. 
+
+\hypertarget{lcd_8h_ad2c1324ade2f6bff55337cea3ca5b351}{
+\index{lcd.h@{lcd.h}!lcd\_\-home\_\-line2@{lcd\_\-home\_\-line2}}
+\index{lcd\_\-home\_\-line2@{lcd\_\-home\_\-line2}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-home\_\-line2}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_ad2c1324ade2f6bff55337cea3ca5b351}
+
+
+Sets character position to second line first position. 
+
+\hypertarget{lcd_8h_ad90b0c9fd11ce24e395f07dbe5617b1f}{
+\index{lcd.h@{lcd.h}!lcd\_\-home\_\-line3@{lcd\_\-home\_\-line3}}
+\index{lcd\_\-home\_\-line3@{lcd\_\-home\_\-line3}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-home\_\-line3}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line3 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_ad90b0c9fd11ce24e395f07dbe5617b1f}
+
+
+Sets character position to third line first position. 
+
+\hypertarget{lcd_8h_a55c2a679388a5c8c7314aa4c494a60c6}{
+\index{lcd.h@{lcd.h}!lcd\_\-home\_\-line4@{lcd\_\-home\_\-line4}}
+\index{lcd\_\-home\_\-line4@{lcd\_\-home\_\-line4}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-home\_\-line4}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-home\_\-line4 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a55c2a679388a5c8c7314aa4c494a60c6}
+
+
+Sets character position to fourth line first position. 
+
+\hypertarget{lcd_8h_a6842775ba83d166f02b8fef8bb63b1e6}{
+\index{lcd.h@{lcd.h}!lcd\_\-init@{lcd\_\-init}}
+\index{lcd\_\-init@{lcd\_\-init}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a6842775ba83d166f02b8fef8bb63b1e6}
+
+
+Initializes PORTA to communicate with LCD controller. 
+
+\hypertarget{lcd_8h_a1b59543ebb020ae74d6bcdf06e2b6d3b}{
+\index{lcd.h@{lcd.h}!lcd\_\-putc@{lcd\_\-putc}}
+\index{lcd\_\-putc@{lcd\_\-putc}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-putc (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a1b59543ebb020ae74d6bcdf06e2b6d3b}
+
+
+Prints one character at the current cursor position. 
+
+\hypertarget{lcd_8h_a3f72561f3c962aa6225fa7094e18d045}{
+\index{lcd.h@{lcd.h}!lcd\_\-puts@{lcd\_\-puts}}
+\index{lcd\_\-puts@{lcd\_\-puts}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-puts (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a3f72561f3c962aa6225fa7094e18d045}
+
+
+Prints a string of characters starting at the current cursor position. 
+
+\hypertarget{lcd_8h_a8a1b81a7de37e8483ceb56c27097dd32}{
+\index{lcd.h@{lcd.h}!lprintf@{lprintf}}
+\index{lprintf@{lprintf}!lcd.h@{lcd.h}}
+\subsubsection[{lprintf}]{\setlength{\rightskip}{0pt plus 5cm}void lprintf (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a8a1b81a7de37e8483ceb56c27097dd32}
+
+
+Prints a string to the lcd; Google \char`\"{}printf\char`\"{} for documentation. 
+
+Prints a string to the lcd; Google \char`\"{}printf\char`\"{} for documentation.
+
+Mimics the C library function printf for writing to the LCD screen. Google \char`\"{}printf\char`\"{} for documentation on the formatter string.
+
+Code from this site was also used: \href{http://www.ozzu.com/cpp-tutorials/tutorial-writing-custom-printf-wrapper-function-t89166.html}{\tt http://www.ozzu.com/cpp-\/tutorials/tutorial-\/writing-\/custom-\/printf-\/wrapper-\/function-\/t89166.html} \begin{DoxyAuthor}{Author}
+Kerrick Staley 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/06/2011 
+\end{DoxyDate}

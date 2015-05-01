@@ -1,0 +1,196 @@
+\hypertarget{util_8c}{
+\section{util.c File Reference}
+\label{util_8c}\index{util.c@{util.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include \char`\"{}util.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}{timer2\_\-start} (char unit)
+\item 
+void \hyperlink{util_8c_a0730547d803aa5321ee1c421597d85bb}{timer2\_\-stop} ()
+\item 
+void \hyperlink{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}{wait\_\-ms} (unsigned int time\_\-val)
+\begin{DoxyCompactList}\small\item\em Blocks for a specified number of milliseconds. \end{DoxyCompactList}\item 
+\hyperlink{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}{ISR} (TIMER2\_\-COMP\_\-vect)
+\item 
+void \hyperlink{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}{init\_\-push\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Initialize PORTC to accept push buttons as input. \end{DoxyCompactList}\item 
+uint8\_\-t \hyperlink{util_8c_a51a73438084f0b2ec94de173281f1015}{read\_\-push\_\-buttons} (void)
+\begin{DoxyCompactList}\small\item\em Return the position of button being pushed. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a0f93cf294588bd654e61dc362c7517a9}{shaft\_\-encoder\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize PORTC for input from the shaft encoder. \end{DoxyCompactList}\item 
+int8\_\-t \hyperlink{util_8c_a475f14f8ad1deaf4dd42953d7c814ec1}{read\_\-shaft\_\-encoder} (void)
+\begin{DoxyCompactList}\small\item\em Read the shaft encoder. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a4808efef61f73d6624f055ede091a83d}{stepper\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Initialize PORTE to control the stepper motor. \end{DoxyCompactList}\item 
+void \hyperlink{util_8c_a9ce12f4e9ee54399eed7c0adde445114}{move\_\-stepper\_\-motor\_\-by\_\-step} (int num\_\-steps, int direction)
+\begin{DoxyCompactList}\small\item\em Turn the Stepper Motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile unsigned int \hyperlink{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}{timer2\_\-tick}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}{
+\index{util.c@{util.c}!init\_\-push\_\-buttons@{init\_\-push\_\-buttons}}
+\index{init\_\-push\_\-buttons@{init\_\-push\_\-buttons}!util.c@{util.c}}
+\subsubsection[{init\_\-push\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-push\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_aae8b6fe63d14bdb55a6c985eb14f74fb}
+
+
+Initialize PORTC to accept push buttons as input. 
+
+Initialize PORTC, which is used by the push buttons. \hypertarget{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}{
+\index{util.c@{util.c}!ISR@{ISR}}
+\index{ISR@{ISR}!util.c@{util.c}}
+\subsubsection[{ISR}]{\setlength{\rightskip}{0pt plus 5cm}ISR (
+\begin{DoxyParamCaption}
+\item[{TIMER2\_\-COMP\_\-vect}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_ab70da2aaa3ee7e1b1a9c37f48d85d660}
+\hypertarget{util_8c_a9ce12f4e9ee54399eed7c0adde445114}{
+\index{util.c@{util.c}!move\_\-stepper\_\-motor\_\-by\_\-step@{move\_\-stepper\_\-motor\_\-by\_\-step}}
+\index{move\_\-stepper\_\-motor\_\-by\_\-step@{move\_\-stepper\_\-motor\_\-by\_\-step}!util.c@{util.c}}
+\subsubsection[{move\_\-stepper\_\-motor\_\-by\_\-step}]{\setlength{\rightskip}{0pt plus 5cm}void move\_\-stepper\_\-motor\_\-by\_\-step (
+\begin{DoxyParamCaption}
+\item[{int}]{num\_\-steps, }
+\item[{int}]{direction}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a9ce12f4e9ee54399eed7c0adde445114}
+
+
+Turn the Stepper Motor. 
+
+Stepper motor move function.
+
+Turn the stepper motor a given number of steps.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\_\-steps} & A value between 1 and 200 steps (1.8 to 360 degrees) \\
+\hline
+{\em direction} & Indication of direction: 1 for CW and -\/1 for CCW \\
+\hline
+\end{DoxyParams}
+\hypertarget{util_8c_a51a73438084f0b2ec94de173281f1015}{
+\index{util.c@{util.c}!read\_\-push\_\-buttons@{read\_\-push\_\-buttons}}
+\index{read\_\-push\_\-buttons@{read\_\-push\_\-buttons}!util.c@{util.c}}
+\subsubsection[{read\_\-push\_\-buttons}]{\setlength{\rightskip}{0pt plus 5cm}uint8\_\-t read\_\-push\_\-buttons (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a51a73438084f0b2ec94de173281f1015}
+
+
+Return the position of button being pushed. 
+
+Return the position of button being pushed. \begin{DoxyReturn}{Returns}
+the position of the button being pushed. A 1 is the rightmost button. 0 indicates no button being pressed 
+\end{DoxyReturn}
+\hypertarget{util_8c_a475f14f8ad1deaf4dd42953d7c814ec1}{
+\index{util.c@{util.c}!read\_\-shaft\_\-encoder@{read\_\-shaft\_\-encoder}}
+\index{read\_\-shaft\_\-encoder@{read\_\-shaft\_\-encoder}!util.c@{util.c}}
+\subsubsection[{read\_\-shaft\_\-encoder}]{\setlength{\rightskip}{0pt plus 5cm}int8\_\-t read\_\-shaft\_\-encoder (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a475f14f8ad1deaf4dd42953d7c814ec1}
+
+
+Read the shaft encoder. 
+
+Shaft encoder read function.
+
+Reads the two switches of the shaft encoder and compares the values to the previous read. This function should be called very frequently for the best results.
+
+\begin{DoxyReturn}{Returns}
+a value indicating the shaft encoder has moved: 0 = no rotation (switches did not change) 1 = CW rotation -\/1 = CCW rotation 
+\end{DoxyReturn}
+\hypertarget{util_8c_a0f93cf294588bd654e61dc362c7517a9}{
+\index{util.c@{util.c}!shaft\_\-encoder\_\-init@{shaft\_\-encoder\_\-init}}
+\index{shaft\_\-encoder\_\-init@{shaft\_\-encoder\_\-init}!util.c@{util.c}}
+\subsubsection[{shaft\_\-encoder\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void shaft\_\-encoder\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a0f93cf294588bd654e61dc362c7517a9}
+
+
+Initialize PORTC for input from the shaft encoder. 
+
+Shaft encoder initialization. \hypertarget{util_8c_a4808efef61f73d6624f055ede091a83d}{
+\index{util.c@{util.c}!stepper\_\-init@{stepper\_\-init}}
+\index{stepper\_\-init@{stepper\_\-init}!util.c@{util.c}}
+\subsubsection[{stepper\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void stepper\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a4808efef61f73d6624f055ede091a83d}
+
+
+Initialize PORTE to control the stepper motor. 
+
+Initialize Stepper Motor. \hypertarget{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}{
+\index{util.c@{util.c}!timer2\_\-start@{timer2\_\-start}}
+\index{timer2\_\-start@{timer2\_\-start}!util.c@{util.c}}
+\subsubsection[{timer2\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void timer2\_\-start (
+\begin{DoxyParamCaption}
+\item[{char}]{unit}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_aa1d8b4ca2abff18a392fb1a60405badb}
+\hypertarget{util_8c_a0730547d803aa5321ee1c421597d85bb}{
+\index{util.c@{util.c}!timer2\_\-stop@{timer2\_\-stop}}
+\index{timer2\_\-stop@{timer2\_\-stop}!util.c@{util.c}}
+\subsubsection[{timer2\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void timer2\_\-stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a0730547d803aa5321ee1c421597d85bb}
+\hypertarget{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}{
+\index{util.c@{util.c}!wait\_\-ms@{wait\_\-ms}}
+\index{wait\_\-ms@{wait\_\-ms}!util.c@{util.c}}
+\subsubsection[{wait\_\-ms}]{\setlength{\rightskip}{0pt plus 5cm}void wait\_\-ms (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time\_\-val}
+\end{DoxyParamCaption}
+)}}
+\label{util_8c_a81f8b753fa3af751d39ae3ffdddb5bbd}
+
+
+Blocks for a specified number of milliseconds. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}{
+\index{util.c@{util.c}!timer2\_\-tick@{timer2\_\-tick}}
+\index{timer2\_\-tick@{timer2\_\-tick}!util.c@{util.c}}
+\subsubsection[{timer2\_\-tick}]{\setlength{\rightskip}{0pt plus 5cm}volatile unsigned int {\bf timer2\_\-tick}}}
+\label{util_8c_aa8769c4c2aeb2f81870e03d197faf4cb}
+\hyperlink{util_8c}{util.c}: utility functions for the Atmel platform
+
+For an overview of how timer based interrupts work, see page 111 and 133-\/137 of the Atmel Mega128 User Guide
+
+\begin{DoxyAuthor}{Author}
+Zhao Zhang \& Chad Nelson 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/06/2011 
+\end{DoxyDate}

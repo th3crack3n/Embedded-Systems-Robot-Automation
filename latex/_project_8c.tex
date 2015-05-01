@@ -1,0 +1,172 @@
+\hypertarget{_project_8c}{
+\section{Project.c File Reference}
+\label{_project_8c}\index{Project.c@{Project.c}}
+}
+{\ttfamily \#include $<$avr/io.h$>$}\par
+{\ttfamily \#include $<$avr/interrupt.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include $<$math.h$>$}\par
+{\ttfamily \#include \char`\"{}bluetooth.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}hazard.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ir\_\-distance.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}lcd.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}music.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}open\_\-interface.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}scanner.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}util.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}servo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}sonar\_\-distance.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_project_8c_a62634036639f88eece6fbf226b45f84b}{BAUD}~57600
+\begin{DoxyCompactList}\small\item\em BAUD Rate to connect to Bluetooth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_project_8c_adfd97cd1685e52c76865b70ab3a7d5f5}{getNumber} (char $\ast$input)
+\item 
+int \hyperlink{_project_8c_aefe6642cfb20ad94a7effb41ab301d6a}{checkSensors} (\hyperlink{structoi__t}{oi\_\-t} $\ast$self)
+\item 
+void \hyperlink{_project_8c_ab0fa1ff7a6ac0787a5df44832bb90734}{movement} (volatile char $\ast$, \hyperlink{structoi__t}{oi\_\-t} $\ast$)
+\item 
+int \hyperlink{_project_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_project_8c_a06e055da3e8a9eb4cd7c88b45495c497}{isAtEnd}
+\item 
+int \hyperlink{_project_8c_aed99fc1d065e5540f22b5ccbcdd8b3f0}{backup} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{_project_8c_a62634036639f88eece6fbf226b45f84b}{
+\index{Project.c@{Project.c}!BAUD@{BAUD}}
+\index{BAUD@{BAUD}!Project.c@{Project.c}}
+\subsubsection[{BAUD}]{\setlength{\rightskip}{0pt plus 5cm}\#define BAUD~57600}}
+\label{_project_8c_a62634036639f88eece6fbf226b45f84b}
+
+
+BAUD Rate to connect to Bluetooth. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{_project_8c_aefe6642cfb20ad94a7effb41ab301d6a}{
+\index{Project.c@{Project.c}!checkSensors@{checkSensors}}
+\index{checkSensors@{checkSensors}!Project.c@{Project.c}}
+\subsubsection[{checkSensors}]{\setlength{\rightskip}{0pt plus 5cm}int checkSensors (
+\begin{DoxyParamCaption}
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{_project_8c_aefe6642cfb20ad94a7effb41ab301d6a}
+Checks the cliff sensors, bump sensors and the Virtual Wall sensors to detect a hazard. 
+\begin{DoxyParams}{Parameters}
+{\em self} & the robot we are using \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there is a hazard otherwise 0 
+\end{DoxyReturn}
+
+
+if we detect some hazard we will back up and go where we started movement. 
+
+\hypertarget{_project_8c_adfd97cd1685e52c76865b70ab3a7d5f5}{
+\index{Project.c@{Project.c}!getNumber@{getNumber}}
+\index{getNumber@{getNumber}!Project.c@{Project.c}}
+\subsubsection[{getNumber}]{\setlength{\rightskip}{0pt plus 5cm}int getNumber (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{_project_8c_adfd97cd1685e52c76865b70ab3a7d5f5}
+Helper function with movement. Will return the integer val of either the distance or an angle. 
+\begin{DoxyParams}{Parameters}
+{\em string} & the string received by putty converts the string to an integer value to be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number extracted from the input string 
+\end{DoxyReturn}
+\hypertarget{_project_8c_a840291bc02cba5474a4cb46a9b9566fe}{
+\index{Project.c@{Project.c}!main@{main}}
+\index{main@{main}!Project.c@{Project.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{_project_8c_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+variable will change to 1 when we have reached the end of the course
+
+Initializes everything we need
+
+prints to the putty that our robot is ready to go.
+
+Checks for any new hazards
+
+Checks for any new commands from PuTTY 
+
+\hypertarget{_project_8c_ab0fa1ff7a6ac0787a5df44832bb90734}{
+\index{Project.c@{Project.c}!movement@{movement}}
+\index{movement@{movement}!Project.c@{Project.c}}
+\subsubsection[{movement}]{\setlength{\rightskip}{0pt plus 5cm}void movement (
+\begin{DoxyParamCaption}
+\item[{volatile char $\ast$}]{input, }
+\item[{{\bf oi\_\-t} $\ast$}]{self}
+\end{DoxyParamCaption}
+)}}
+\label{_project_8c_ab0fa1ff7a6ac0787a5df44832bb90734}
+Will receive a string from the putty determining what we want our robot to do. m will be move a given distance s will be STOP l will be to scan the area r will be turn a given degree g will display sensor data w will indicate final position found
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & -\/ input string, parsed to find desired function \\
+\hline
+{\em self} & -\/ robot being used \\
+\hline
+\end{DoxyParams}
+
+
+moves the robot a given length
+
+when our value is positive we move forward
+
+we want our distance to be in cm
+
+when our value is negative we move backward
+
+stops the robot.
+
+uses the scan function to scan the area and print to putty.
+
+moves the robot a given degree
+
+rotates right given degrees when the value is positive.
+
+rotates left given degrees when the value is negative.
+
+used to display the sensor data.
+
+Will be used when we are in the end zone and will exit the while loop. 
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{_project_8c_aed99fc1d065e5540f22b5ccbcdd8b3f0}{
+\index{Project.c@{Project.c}!backup@{backup}}
+\index{backup@{backup}!Project.c@{Project.c}}
+\subsubsection[{backup}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf backup} = 0}}
+\label{_project_8c_aed99fc1d065e5540f22b5ccbcdd8b3f0}
+\hypertarget{_project_8c_a06e055da3e8a9eb4cd7c88b45495c497}{
+\index{Project.c@{Project.c}!isAtEnd@{isAtEnd}}
+\index{isAtEnd@{isAtEnd}!Project.c@{Project.c}}
+\subsubsection[{isAtEnd}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf isAtEnd}}}
+\label{_project_8c_a06e055da3e8a9eb4cd7c88b45495c497}
+isAtEnd Determines whether we are at the end of the course or not backup Records how much the robot must back up if it finds a hazard 
